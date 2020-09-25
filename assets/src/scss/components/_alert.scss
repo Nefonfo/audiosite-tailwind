@@ -1,0 +1,25 @@
+.nf-alert{
+    @apply bg-#{$theme-color-nf}-800 text-center py-0 py-2;
+
+    @screen lg{
+        @apply px-4;
+    }
+
+    a{
+        .nf-alert-body {
+            @apply p-2 bg-#{$theme-color-nf}-800 items-center text-#{$theme-color-nf}-100 leading-none flex;
+
+            @screen lg{
+                @apply inline-flex;
+            }
+
+            .nf-alert-status {
+                @apply flex rounded-full bg-#{$theme-color-nf}-500 uppercase px-2 py-1 text-xs font-bold mr-3;
+            }
+
+            .nf-alert-text {
+                @apply font-semibold mr-2 text-left flex-auto;
+            }
+        }
+    }
+}

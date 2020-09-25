@@ -1,0 +1,21 @@
+.nf-toggle-up {
+    position: fixed;
+    display: flex;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 3;
+    transform: scale(0);
+    transition: transform 0.25s ease-in;
+    cursor: pointer;
+    @apply shadow-2xl bg-#{$theme-color-nf}-500;
+    @apply rounded-full;
+    @apply h-12 w-12 flex items-center justify-center;
+
+    &.nf-active {
+        transform: scale(1);
+    }
+    
+    span{
+        @apply text-white;
+    }
+}

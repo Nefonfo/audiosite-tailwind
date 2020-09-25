@@ -85,7 +85,7 @@
     }
 
     .nf-navbar-navigation-link {
-        @apply px-3 py-2 mx-1 rounded text-#{$theme-color-nf}-300 text-center;
+        @apply px-3 py-2 mx-1 rounded text-#{$theme-color-nf}-200 text-center;
 
         transition: background .3s ease-in;
         &:hover {
