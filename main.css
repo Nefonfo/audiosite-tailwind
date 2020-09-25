@@ -1087,6 +1087,8 @@ body {
   right: 2rem;
   bottom: 2rem;
   z-index: 3;
+  transform: scale(0);
+  transition: transform 0.25s ease-in;
   cursor: pointer;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --bg-opacity: 1;
@@ -1098,6 +1100,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.nf-toggle-up.nf-active {
+  transform: scale(1);
 }
 
 .nf-toggle-up span {
