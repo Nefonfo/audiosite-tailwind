@@ -1081,6 +1081,31 @@ body {
   flex-grow: 1;
 }
 
+.nf-toggle-up {
+  position: fixed;
+  display: flex;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 3;
+  cursor: pointer;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --bg-opacity: 1;
+  background-color: #667eea;
+  background-color: rgba(102, 126, 234, var(--bg-opacity));
+  border-radius: 9999px;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nf-toggle-up span {
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+}
+
 .nf-presentation-card {
   display: flex;
   flex-wrap: wrap;
