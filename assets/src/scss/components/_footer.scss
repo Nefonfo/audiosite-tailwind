@@ -1,0 +1,95 @@
+
+//DESIGN FOR FOOTER
+
+.nf-footer{
+    @apply flex items-center justify-center flex-wrap p-3 bg-#{$theme-color-nf}-600 py-10 px-4;
+
+    @screen lg {
+        @apply px-24 py-20 justify-between items-start;
+    }
+}
+
+.nf-footer-column {
+    @apply text-white w-full text-center mb-4;
+
+    @screen md {
+        @apply w-1/2 text-center mb-10;
+    }
+
+    @screen lg {
+        @apply w-auto text-left mb-0;
+    }
+
+    &.logo{
+        @apply mb-8;
+        
+        @screen lg {
+            @apply mb-0;
+        }
+
+        a{
+            @apply flex flex-shrink-0 justify-center items-center flex-col text-white;
+            @screen lg {
+                @apply justify-start flex-row;
+            }
+            svg {
+                @apply fill-current h-10 w-10 mr-4;
+            }
+            span {
+                @apply font-semibold text-2xl;
+            }
+        }
+    }
+
+    h3{
+        @apply font-semibold text-lg mb-6;
+    }
+
+    ul {
+        li{
+            @apply mb-3;
+            a{
+                &:hover{
+                    @apply text-#{$theme-color-nf}-300;
+                }
+            }
+        }
+    }
+
+}
+
+
+// DESIGN FOR MINI FOOTER
+.nf-footer-mini{
+    @apply bg-gray-100 flex flex-wrap justify-center items-center py-2 px-2;
+
+    @screen lg {
+        @apply px-24 justify-between;
+    }
+
+    .nf-mini-text-copyright {
+        @apply w-full text-center mb-4 text-gray-600;
+
+        @screen lg {
+            @apply mb-0 inline-flex flex-grow w-10/12;
+        }
+    }
+
+    .nf-mini-social-links {
+        font-size: 1.8rem;
+
+        @apply w-2/5 flex justify-around;
+        
+        @screen lg {
+            font-size: 1.5rem;
+            @apply inline-flex flex-grow w-2/12;
+        }
+        .nf-mini-social-link {
+            @apply text-gray-600;
+            transition: all .25s ease-in;
+            &:hover {
+                @apply text-gray-800;
+            }
+        }
+    }
+}

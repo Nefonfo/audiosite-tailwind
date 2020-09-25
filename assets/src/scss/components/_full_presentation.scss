@@ -1,0 +1,89 @@
+.nf-full-presentation{
+    @apply bg-#{$theme-color-nf}-400;
+    @apply flex flex-wrap;
+    position: relative;
+    .nf-full-content {
+        @apply flex flex-wrap;
+        z-index: 2;
+    }
+}
+
+.nf-full-block {
+    @apply w-full flex flex-wrap items-stretch;
+
+    &.nf-full-title {
+        @apply px-10 py-10 justify-center text-center order-2;
+
+        @screen lg {
+            @apply w-2/5 pl-16 py-20 justify-start text-left order-1;
+        }
+    }
+
+    &.nf-full-image {
+        @apply flex flex-wrap justify-center p-10 order-1;
+        
+        @screen lg {
+            @apply w-3/5 order-2;
+        }
+
+        img {
+            @apply object-contain;
+        }
+    }
+}
+
+.nf-full-header {
+    h1, h3 {
+        text-transform: uppercase;
+        @apply text-white font-bold w-full;
+    }
+
+    h1 {
+        @apply text-4xl;
+
+        @screen md {
+            @apply text-6xl;
+        }
+
+        @screen lg {
+            @apply text-6xl;
+        }
+    }
+
+    h3 {
+        @apply text-3xl -mt-3;
+
+        @screen md {
+            @apply text-5xl -mt-4;
+        }
+
+        @screen lg {
+            @apply text-5xl -mt-6;
+        }
+    }
+}
+
+.nf-full-paragraph{
+    p {
+        @apply flex-grow text-gray-100 mt-2 w-full text-lg;
+    }
+}
+
+.nf-full-links{
+    @apply w-full mt-5;
+    a{
+        transition: all .20s ease-in-out;
+        @apply bg-gradient-to-r from-#{$theme-color-nf}-400 to-#{$theme-color-nf}-800 mt-4 text-white rounded px-8 py-3 text-lg;
+    }
+}
+
+.nf-full-svg-waves{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    @apply bg-#{$theme-color-nf}-400;
+
+    path {
+        fill: theme('colors.#{$theme-color-nf}.800')
+    }
+}

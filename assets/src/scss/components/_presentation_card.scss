@@ -1,0 +1,75 @@
+.nf-presentation-card {
+    @apply flex flex-wrap;
+
+    .nf-presentation-block{
+        @apply w-full;
+    
+        @screen lg {
+            @apply w-1/2;
+        }
+
+        &.nf-image-block {
+            position: relative;
+            @apply py-16 px-12;
+            @screen lg {
+                @apply py-32 px-24;
+            }
+            
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0; 
+                left: 0;
+                width: 100%; 
+                height: 100%;
+                transition: background-color .35s ease-in;
+                background-color: theme('colors.#{$theme-color-nf}.800');
+                background-blend-mode: multiply ;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .nf-title-image {
+                position: relative;
+                h1 {
+                    @apply text-4xl;
+                    @apply font-semibold text-white;
+
+                    @screen lg {
+                        @apply text-5xl;
+                    }
+                }
+                p{
+                    @apply mt-3 text-lg font-semibold text-white;
+                }
+            }
+        }
+        
+    
+        &.nf-info-block {
+            @apply bg-#{$theme-color-nf}-800 p-10 flex justify-center flex-col;
+            
+            @screen lg {
+                @apply p-20;
+            }
+
+            .nf-info-header {
+                @apply text-white text-4xl font-semibold border-solid border-l-8 border-#{$theme-color-nf}-100;
+
+                h1{
+                    @apply ml-2;
+                }
+            }
+
+            ul {
+                @apply mt-6;
+                li{
+                    @apply text-white text-2xl mt-2;
+                    i{
+                        @apply text-green-400;
+                    }
+                }
+            }
+        }
+    }
+}

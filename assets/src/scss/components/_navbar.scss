@@ -1,0 +1,104 @@
+.nf-navbar {
+    z-index: 999;
+    @apply sticky top-0 flex items-center flex-wrap p-3 bg-#{$theme-color-nf}-800 border-solid border-#{$theme-color-nf}-800 border-b-4;
+}
+// SPECIALS FOR ACTIVATE
+.nf-navbar {
+    transition: all 0.35s ease-in;
+    &.nf-active {
+        @apply bg-white border-#{$theme-color-nf}-600;
+
+        .nf-navbar-brand {
+            @apply text-#{$theme-color-nf}-600;
+        }
+
+        .nf-navbar-toggler{
+            .nf-navbar-burger {
+                @include burger(25px, 3px, 5px, theme('colors.#{$theme-color-nf}.600'));
+                &.cross {
+                    @include burger-to-cross;
+                }
+            }
+        }
+
+        .nf-navbar-navigation-box {
+            .nf-navbar-navigation-link {
+                @apply text-#{$theme-color-nf}-700 text-center;
+                &:hover {
+                    @apply bg-#{$theme-color-nf}-600 text-white;
+                }
+        
+                &.active {
+                    @apply bg-#{$theme-color-nf}-800 text-white;
+                }
+                
+            }
+        }
+    }
+}
+
+.nf-navbar-brand{
+    @apply flex flex-shrink-0 items-center text-white;
+    
+    svg{
+        @apply fill-current h-8 w-8 mr-2;
+    }
+
+    span {
+        @apply font-semibold text-xl;
+    }
+}
+
+.nf-navbar-toggler {
+    @apply inline-flex rounded ml-auto p-3;
+
+    @screen lg {
+        @apply hidden;
+    }
+
+    &:hover {
+        @apply text-#{$theme-color-nf}-600;
+    }
+
+    .nf-navbar-burger {
+        @include burger(25px, 3px, 5px, theme('colors.white'));
+        &.cross {
+            @include burger-to-cross;
+        }
+    }
+}
+
+.nf-navbar-navigation {
+    @apply hidden w-full mt-4;
+
+    @screen lg {
+        @apply inline-flex flex-grow w-auto mt-0;
+    }
+
+}
+
+.nf-navbar-navigation-box {
+    @apply flex flex-col mt-2;
+
+    @screen lg {
+        @apply inline-flex flex-row ml-auto mt-0;
+    }
+
+    .nf-navbar-navigation-link {
+        @apply px-3 py-2 mx-1 rounded text-#{$theme-color-nf}-300 text-center;
+
+        transition: background .3s ease-in;
+        &:hover {
+            @apply bg-#{$theme-color-nf}-400 text-white;
+        }
+
+        &.active {
+            @apply bg-#{$theme-color-nf}-700 text-white;
+        }
+
+        @screen lg {
+            @apply inline-flex w-auto;
+        }
+        
+    }
+}
