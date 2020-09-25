@@ -870,8 +870,8 @@ body {
   margin-right: 0.25rem;
   border-radius: 0.25rem;
   --text-opacity: 1;
-  color: #a3bffa;
-  color: rgba(163, 191, 250, var(--text-opacity));
+  color: #c3dafe;
+  color: rgba(195, 218, 254, var(--text-opacity));
   text-align: center;
   transition: background .3s ease-in;
 }
@@ -1112,6 +1112,66 @@ body {
   color: rgba(255, 255, 255, var(--text-opacity));
 }
 
+.nf-alert {
+  --bg-opacity: 1;
+  background-color: #434190;
+  background-color: rgba(67, 65, 144, var(--bg-opacity));
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .nf-alert {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.nf-alert a .nf-alert-body {
+  padding: 0.5rem;
+  --bg-opacity: 1;
+  background-color: #434190;
+  background-color: rgba(67, 65, 144, var(--bg-opacity));
+  align-items: center;
+  --text-opacity: 1;
+  color: #ebf4ff;
+  color: rgba(235, 244, 255, var(--text-opacity));
+  line-height: 1;
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  .nf-alert a .nf-alert-body {
+    display: inline-flex;
+  }
+}
+
+.nf-alert a .nf-alert-body .nf-alert-status {
+  display: flex;
+  border-radius: 9999px;
+  --bg-opacity: 1;
+  background-color: #667eea;
+  background-color: rgba(102, 126, 234, var(--bg-opacity));
+  text-transform: uppercase;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-right: 0.75rem;
+}
+
+.nf-alert a .nf-alert-body .nf-alert-text {
+  font-weight: 600;
+  margin-right: 0.5rem;
+  text-align: left;
+  flex: 1 1 auto;
+}
+
 .nf-presentation-card {
   display: flex;
   flex-wrap: wrap;
@@ -1218,11 +1278,12 @@ body {
   margin-left: 0.5rem;
 }
 
-.nf-presentation-card .nf-presentation-block.nf-info-block ul {
+.nf-presentation-card .nf-presentation-block.nf-info-block .nf-info-specs ul {
   margin-top: 1.5rem;
+  margin-left: 1rem;
 }
 
-.nf-presentation-card .nf-presentation-block.nf-info-block ul li {
+.nf-presentation-card .nf-presentation-block.nf-info-block .nf-info-specs ul li {
   --text-opacity: 1;
   color: #fff;
   color: rgba(255, 255, 255, var(--text-opacity));
@@ -1230,7 +1291,7 @@ body {
   margin-top: 0.5rem;
 }
 
-.nf-presentation-card .nf-presentation-block.nf-info-block ul li i {
+.nf-presentation-card .nf-presentation-block.nf-info-block .nf-info-specs ul li i {
   --text-opacity: 1;
   color: #68d391;
   color: rgba(104, 211, 145, var(--text-opacity));
