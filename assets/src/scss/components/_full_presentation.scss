@@ -72,8 +72,12 @@
 .nf-full-links{
     @apply w-full mt-5;
     a{
-        transition: all .20s ease-in-out;
-        @apply bg-gradient-to-r from-#{$theme-color-nf}-400 to-#{$theme-color-nf}-800 mt-4 text-white rounded px-8 py-3 text-lg;
+        transition: all .35s ease-in;
+        @apply bg-#{$theme-color-nf}-800 mt-4 text-white rounded px-8 py-3 text-lg;
+
+        &:hover {
+            @apply bg-#{$theme-color-nf}-600;
+        }
     }
 }
 
