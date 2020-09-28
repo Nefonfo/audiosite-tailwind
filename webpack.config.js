@@ -3,9 +3,11 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 
 module.exports = {
-    mode: "development",
+    mode: "production",
     context: path.resolve(__dirname, "assets"),
     output: {
         filename: 'main.bundle.js',
@@ -18,7 +20,9 @@ module.exports = {
         port: 9000
     },
     plugins: [
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({filename: "[name].min.css"}),
+        new FixStyleOnlyEntriesPlugin(),
+        new OptimizeCSSAssetsPlugin({}),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: path.resolve(__dirname, "assets/src/templates/pages/index.pug"),

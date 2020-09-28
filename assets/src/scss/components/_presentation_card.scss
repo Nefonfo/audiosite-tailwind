@@ -54,16 +54,24 @@
             }
 
             .nf-info-header {
-                @apply text-white text-4xl font-semibold border-solid border-l-8 border-#{$theme-color-nf}-100;
+                @apply text-white text-4xl font-semibold;
 
-                h1{
-                    @apply ml-2;
+                @screen md {
+                    @apply border-solid border-l-8 border-#{$theme-color-nf}-100;
+
+                    h1{
+                        @apply ml-2;
+                    }
                 }
             }
 
             .nf-info-specs {
                 ul {
-                    @apply mt-6 ml-4;
+                    @apply mt-6;
+
+                    @screen md {
+                        @apply ml-4;
+                    }
                     li{
                         @apply text-white text-2xl mt-2;
                         i{

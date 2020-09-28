@@ -7,14 +7,14 @@
 
     a{
         .nf-alert-body {
-            @apply p-2 bg-#{$theme-color-nf}-800 items-center text-#{$theme-color-nf}-100 leading-none flex;
+            @apply p-2 rounded-full items-center text-#{$theme-color-nf}-100 leading-none flex;
 
             @screen lg{
-                @apply inline-flex;
+                @apply inline-flex bg-#{$theme-color-nf}-600;
             }
 
             .nf-alert-status {
-                @apply flex rounded-full bg-#{$theme-color-nf}-500 uppercase px-2 py-1 text-xs font-bold mr-3;
+                @apply flex rounded-full uppercase px-2 py-1 text-xs font-bold mr-3;
             }
 
             .nf-alert-text {
