@@ -7,7 +7,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 
 module.exports = {
-    mode: "production",
+    mode: "development",
     context: path.resolve(__dirname, "assets"),
     output: {
         filename: 'main.bundle.js',

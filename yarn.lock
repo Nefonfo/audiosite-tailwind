@@ -1180,6 +1180,11 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
+animejs@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/animejs/-/animejs-3.2.0.tgz#2daea7365983249022cc454fa726acdb4a84345d"
+  integrity sha512-zhtGl5cS0G2f5DfciMO8uwWpnx06nfFnHlXYYXHBazHep1Lyd6kEtBQP+9hpYKE0dBZjIigHp9VpMO95ZfXQJQ==
+
 ansi-colors@^3.0.0:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-3.2.4.tgz#e3a3da4bfbae6c86a9c285625de124a234026fbf"
@@ -7651,6 +7656,11 @@ watchpack@^1.7.4:
   optionalDependencies:
     chokidar "^3.4.1"
     watchpack-chokidar2 "^2.0.0"
+
+wavify@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/wavify/-/wavify-1.0.0.tgz#08fef2ce1ae8236fd6b0a93df56c2b7fbae77602"
+  integrity sha512-fTF3xWaCjKsQjRptpm0xo3DU7UK3dQu1+N5LPqwhrtXe1ZhVOBoc9krCByYoH5UBH35NLGZQsyBcHQamMPAc3Q==
 
 wbuf@^1.1.0, wbuf@^1.7.3:
   version "1.7.3"
