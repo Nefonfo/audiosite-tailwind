@@ -1,8 +1,7 @@
-.nf-features-heading-container{
-    @apply bg-gray-100;
+.nf-heading-container{
     @apply flex flex-wrap justify-center px-10 pt-8;
 
-    .nf-features-heading {
+    .nf-heading {
         @apply  flex flex-wrap flex-col text-center w-full;
 
         h1 {

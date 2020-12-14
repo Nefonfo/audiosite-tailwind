@@ -1,0 +1,40 @@
+.nf-benefits-container {
+    @apply flex flex-wrap;
+    .nf-benefit {
+        @apply flex flex-wrap px-10 my-6 items-center;
+        @screen lg {
+            @apply px-32 my-12;
+        }
+        .nf-benefit-info {
+            @apply w-full;
+
+            @screen lg {
+                @apply w-1/2;
+            }
+
+            h1 {
+                @apply text-3xl font-bold text-#{$theme-color-nf}-600;
+            }
+
+            p{
+                @apply text-lg text-gray-600 mt-2;
+            }
+        }
+
+        .nf-benefit-image {
+            @apply w-full flex justify-center;
+
+            @screen lg {
+                @apply w-1/2;
+            }
+
+            img {
+                max-width: 18rem;
+                @apply mb-5;
+                @screen lg {
+                    max-width: 25rem;
+                }
+            }
+        }
+    }
+}

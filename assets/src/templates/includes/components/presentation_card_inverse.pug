@@ -1,11 +1,10 @@
 // BEGINS PRESENTATION CARD COMPONENT
 style.
-    #nf-image-1::before {
-        background-image: url('./img/test_diego_1.jpg');
+    #nf-image-2::before {
+        background-image: url('./img/test_diego_2.jpg');
     }
-.nf-presentation-card
-    #nf-image-1.nf-presentation-block.nf-image-block     
-    .nf-presentation-block.nf-info-block
+.nf-presentation-card 
+    .nf-presentation-block.nf-info-block(class="order-2 md:order-1")
         .nf-info-header(data-aos="slide-right" data-aos-delay="50" data-aos-once="true")
             h1 ¿Que encontraras aquí?
         .nf-info-specs(data-aos="slide-right" data-aos-delay="50" data-aos-once="true")
@@ -22,5 +21,5 @@ style.
                 li
                     i.fa.fa-check-circle
                     |  Comparativas
-
+    #nf-image-2.nf-presentation-block.nf-image-block(class="order-1 md:order-2")
 // ENDS PRESENTATION CARD COMPONENT

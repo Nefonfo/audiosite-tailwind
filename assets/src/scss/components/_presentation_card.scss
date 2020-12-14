@@ -10,6 +10,7 @@
 
         &.nf-image-block {
             position: relative;
+            min-height: 20rem;
             @apply py-16 px-12;
             @screen lg {
                 @apply py-32 px-24;
@@ -22,32 +23,14 @@
                 left: 0;
                 width: 100%; 
                 height: 100%;
-                transition: background-color .35s ease-in;
-                background-color: theme('colors.#{$theme-color-nf}.800');
-                background-blend-mode: multiply ;
                 background-repeat: no-repeat;
                 background-size: cover;
-            }
-
-            .nf-title-image {
-                position: relative;
-                h1 {
-                    @apply text-4xl;
-                    @apply font-semibold text-white;
-
-                    @screen lg {
-                        @apply text-5xl;
-                    }
-                }
-                p{
-                    @apply mt-3 text-lg font-semibold text-white;
-                }
             }
         }
         
     
         &.nf-info-block {
-            @apply bg-#{$theme-color-nf}-800 p-10 flex justify-center flex-col;
+            @apply bg-#{$theme-color-nf}-600 p-10 flex justify-center flex-col;
             
             @screen lg {
                 @apply p-20;
