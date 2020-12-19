@@ -1,16 +1,8 @@
 .nf-heading-container{
-    @apply flex flex-wrap justify-center px-10 pt-8;
+    @apply flex flex-wrap justify-center px-10 pt-8 bg-gray-100;
 
     .nf-heading {
-        @apply  flex flex-wrap flex-col text-center w-full;
-
-        h1 {
-            @apply text-5xl font-bold text-#{$theme-color-nf}-800;
-        }
-
-        h3{
-            @apply text-4xl font-semibold text-#{$theme-color-nf}-600;
-        }
+        @include classic-title(text-#{$theme-color-nf}-800, text-#{$theme-color-nf}-600);
     }
 }
 

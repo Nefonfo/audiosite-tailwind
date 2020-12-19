@@ -1,0 +1,11 @@
+@mixin classic-title($h1-color, $h3-color){
+    @apply  flex flex-wrap flex-col text-center w-full;
+
+    h1 {
+        @apply text-5xl font-bold #{$h1-color};
+    }
+
+    h3{
+        @apply text-4xl font-semibold #{$h3-color};
+    }
+}

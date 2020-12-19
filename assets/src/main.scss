@@ -2,11 +2,8 @@
 @import '~tailwindcss/components';
 
 @import './scss/global/global';
+@import './scss/mixins/mixins';
 @import './scss/components/components';
 
 @import '~tailwindcss/utilities';
 @import '~aos/src/sass/aos.scss';
-
-body {
-    background: theme('colors.gray.100');
-}

@@ -1,9 +1,17 @@
+.nf-benefits-heading-container{
+    @apply flex flex-wrap justify-center px-10 pt-8;
+
+    .nf-benefits-heading {
+        @include classic-title(text-#{$theme-color-nf}-800, text-#{$theme-color-nf}-600);
+    }
+}
+
 .nf-benefits-container {
-    @apply flex flex-wrap;
+    @apply flex flex-wrap mb-6;
     .nf-benefit {
         @apply flex flex-wrap px-10 my-6 items-center;
         @screen lg {
-            @apply px-32 my-12;
+            @apply px-32;
         }
         .nf-benefit-info {
             @apply w-full;
@@ -13,7 +21,11 @@
             }
 
             h1 {
-                @apply text-3xl font-bold text-#{$theme-color-nf}-600;
+                @apply text-3xl font-bold text-#{$theme-color-nf}-600 text-center mt-2;
+
+                @screen lg {
+                    @apply text-left mt-0;
+                }
             }
 
             p{

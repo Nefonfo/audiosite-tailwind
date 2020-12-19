@@ -1,0 +1,12 @@
+@mixin classic-button($bg, $bg-hover, $text, $text-hover: null) {
+    transition: all .15s ease-in;
+    @apply px-5 py-3 border border-transparent text-base font-medium rounded-md #{$text} #{$bg};
+
+    &:hover {
+        @apply #{$bg-hover};
+
+        @if($text-hover) {
+                @apply #{$text-hover};
+        }
+    }
+}

@@ -1,0 +1,7 @@
+.nf-btn-primary{
+    @include classic-button(bg-#{$theme-color-nf}-800, bg-#{$theme-color-nf}-600, text-white);
+}
+
+.nf-btn-light{
+    @include classic-button(bg-white, bg-#{$theme-color-nf}-400, text-#{$theme-color-nf}-400, text-white);
+}

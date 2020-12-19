@@ -1,0 +1,51 @@
+.nf-small-cta {
+    @apply bg-gray-100;
+}
+
+.nf-small-cta-container {
+    max-width: 80rem;
+    @apply mx-auto py-12 px-4;
+
+    @screen sm {
+        @apply px-6;
+    }
+
+    @screen lg {
+        @apply py-16 px-24 flex items-center justify-between;
+    }
+
+    h2 {
+        @apply text-3xl font-extrabold tracking-tight text-#{$theme-color-nf}-800 text-center;
+
+        @screen sm {
+            @apply text-4xl;
+        }
+
+        @screen lg {
+            @apply text-left;
+        }
+
+        span {
+            @apply block;
+            &:not(:first-child){
+                @apply text-#{$theme-color-nf}-400;
+            }
+        }
+    }
+}
+
+.nf-small-cta-buttons {
+
+    @apply mt-8 flex justify-center;
+
+    @screen lg {
+        @apply mt-0 flex-shrink-0;
+    }
+
+    div {
+        @apply inline-flex rounded-md shadow;
+        &:not(:first-child) {
+            @apply ml-3;
+        }
+    }
+}
