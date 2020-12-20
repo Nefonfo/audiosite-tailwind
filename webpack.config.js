@@ -28,6 +28,11 @@ module.exports = {
             template: path.resolve(__dirname, "assets/src/templates/pages/index.pug"),
             hash: true
         }),
+        new HtmlWebpackPlugin({
+            filename: 'nosotros.html',
+            template: path.resolve(__dirname, "assets/src/templates/pages/nosotros.pug"),
+            hash: true
+        }),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',

@@ -1,66 +1,71 @@
 .nf-navbar {
+    // DISPLAY
     z-index: 999;
-    @apply sticky top-0 flex items-center flex-wrap p-3 bg-#{$theme-color-nf}-800 border-solid border-#{$theme-color-nf}-800 border-b-4;
-}
-// SPECIALS FOR ACTIVATE
-.nf-navbar {
-    transition: all 0.35s ease-in;
-    &.nf-active {
-        @apply bg-white border-#{$theme-color-nf}-600;
+    @apply sticky top-0 flex items-center flex-wrap;
+    
+    // COMPUTED
+    @apply p-3;
 
-        .nf-navbar-brand {
-            @apply text-#{$theme-color-nf}-600;
-        }
+    // DECORATION
+    @apply border-solid border-b-4;
 
-        .nf-navbar-toggler{
-            .nf-navbar-burger {
-                @include burger(25px, 3px, 5px, theme('colors.#{$theme-color-nf}.600'));
-                &.cross {
-                    @include burger-to-cross;
-                }
-            }
-        }
+    // COLOR: LIGHT
+    @apply bg-#{$theme-color-nf}-800 border-#{$theme-color-nf}-800;
 
-        .nf-navbar-navigation-box {
-            .nf-navbar-navigation-link {
-                @apply text-#{$theme-color-nf}-700 text-center;
-                &:hover {
-                    @apply bg-#{$theme-color-nf}-600 text-white;
-                }
-        
-                &.active {
-                    @apply bg-#{$theme-color-nf}-800 text-white;
-                }
-                
-            }
-        }
+    // COLOR: DARK
+    @media (prefers-color-scheme: dark) {
+        @apply bg-#{$theme-color-dark-nf}-900 border-#{$theme-color-dark-nf}-900;
     }
 }
 
+
 .nf-navbar-brand{
-    @apply flex flex-shrink-0 items-center text-white;
+    // DISPLAY
+    @apply flex flex-shrink-0 items-center;
+
+    // COLOR
+    @apply text-white;
     
     svg{
-        @apply fill-current h-8 w-8 mr-2;
+        // SIZING
+        @apply h-8 w-8;
+
+        // LAYOUT
+        @apply mr-2;
+        
+        // COLOR
+        @apply fill-current;
     }
 
     span {
+        // FONT
         @apply font-semibold text-xl;
     }
 }
 
 .nf-navbar-toggler {
-    @apply inline-flex rounded ml-auto p-3;
+    // DISPLAY
+    @apply inline-flex;
 
+    // COMPUTED
+    @apply ml-auto p-3;
+
+    // DECORATION
+    @apply rounded;
+
+    // HOVER
+    &:hover {
+        // COLOR: LIGHT
+        @apply text-#{$theme-color-nf}-600;
+    }
+
+    // RESPONSIVE
     @screen lg {
         @apply hidden;
     }
 
-    &:hover {
-        @apply text-#{$theme-color-nf}-600;
-    }
-
     .nf-navbar-burger {
+        // MIXIN
         @include burger(25px, 3px, 5px, theme('colors.white'));
         &.cross {
             @include burger-to-cross;
@@ -69,36 +74,150 @@
 }
 
 .nf-navbar-navigation {
-    @apply hidden w-full mt-4;
 
+    // DISPLAY
+    @apply hidden;
+
+    // SIZING
+    @apply w-full;
+
+    // COMPUTED
+    @apply mt-4;
+
+    // RESPONSIVE
     @screen lg {
-        @apply inline-flex flex-grow w-auto mt-0;
+        // SIZING
+        @apply w-auto;
+        // DISPLAY
+        @apply inline-flex flex-grow;
+        // COMPUTED
+        @apply mt-0;
     }
 
 }
 
 .nf-navbar-navigation-box {
-    @apply flex flex-col mt-2;
-
+    // DISPLAY
+    @apply flex flex-col;
+    // COMPUTED
+    @apply mt-2;
+    // RESPONSIVE
     @screen lg {
-        @apply inline-flex flex-row ml-auto mt-0;
+        // DISPLAY
+        @apply inline-flex flex-row;
+        // COMPUTED
+        @apply ml-auto mt-0;
     }
 
     .nf-navbar-navigation-link {
-        @apply px-3 py-2 mx-1 rounded text-#{$theme-color-nf}-200 text-center;
 
+        // COMPUTED
+        @apply px-3 py-2 mx-1;
+
+        // DECORATION
+        @apply rounded;
+        // TEXT HELPER
+        @apply text-center;
+
+        // COLOR: LIGHT
         transition: background .3s ease-in;
+        @apply text-#{$theme-color-nf}-200;
+
+        // COLOR: DARK
+        @media (prefers-color-scheme: dark) {
+            @apply text-#{$theme-color-dark-nf}-300;
+        }
+        
         &:hover {
+            // COLOR: LIGHT
             @apply bg-#{$theme-color-nf}-400 text-white;
+
+            // COLOR: DARK
+            @media (prefers-color-scheme: dark) {
+                @apply bg-#{$theme-color-dark-nf}-700;
+            }
         }
 
         &.active {
             @apply bg-#{$theme-color-nf}-700 text-white;
+
+            @media (prefers-color-scheme: dark) {
+                @apply bg-#{$theme-color-dark-nf}-800;
+            }
         }
 
         @screen lg {
             @apply inline-flex w-auto;
         }
         
+    }
+}
+
+
+
+// SPECIALS FOR ACTIVATE
+.nf-navbar {
+    transition: all 0.35s ease-in;
+    &.nf-active {
+        // COLOR: LIGHT
+        @apply bg-white border-#{$theme-color-nf}-600;
+        // COLOR: DARK
+        @media (prefers-color-scheme: dark) {
+            @apply bg-#{$theme-color-dark-nf}-800 border-#{$theme-color-dark-nf}-700;
+        }
+
+        .nf-navbar-brand {
+            // COLOR: LIGHT
+            @apply text-#{$theme-color-nf}-600;
+
+            // COLOR: DARK
+            @media (prefers-color-scheme: dark) {
+                @apply text-white;
+            }
+        }
+
+        .nf-navbar-toggler{
+            .nf-navbar-burger {
+                // COLOR: LIGHT
+                @include burger(25px, 3px, 5px, theme('colors.#{$theme-color-nf}.600'));
+                // COLOR: DARK
+                @media (prefers-color-scheme: dark) {
+                    @include burger(25px, 3px, 5px, theme('colors.white'));
+                }
+                &.cross {
+                    @include burger-to-cross;
+                }
+            }
+        }
+
+        .nf-navbar-navigation-box {
+            .nf-navbar-navigation-link {
+                // COLOR: LIGHT
+                @apply text-#{$theme-color-nf}-700;
+                // COLOR: DARK
+                @media (prefers-color-scheme: dark) {
+                    @apply text-#{$theme-color-dark-nf}-200;
+                }
+
+                &:hover {
+                    // COLOR: LIGHT
+                    @apply bg-#{$theme-color-nf}-600;
+                    // COLOR: DARK    
+                    @media (prefers-color-scheme: dark) {
+                        @apply bg-#{$theme-color-dark-nf}-600;
+                    }
+                }
+        
+                &.active {
+                    // COLOR: LIGHT
+                    @apply bg-#{$theme-color-nf}-800;
+                    // COLOR: DARK
+                    @media (prefers-color-scheme: dark) {
+                        @apply bg-#{$theme-color-dark-nf}-700;
+                    }
+                }
+                
+            }
+        }
     }
 }

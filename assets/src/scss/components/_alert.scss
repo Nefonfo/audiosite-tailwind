@@ -1,24 +1,66 @@
 .nf-alert{
-    @apply bg-#{$theme-color-nf}-800 text-center py-0 py-2;
 
+    // COMPUTED
+    @apply py-0 py-2;
+    // TEXT HELPER
+    @apply text-center;
+
+    // COLOR: LIGHT
+    @apply bg-#{$theme-color-nf}-800;
+
+    // COLOR: DARK
+    @media (prefers-color-scheme: dark) {
+        @apply bg-#{$theme-color-dark-nf}-900;
+    }
+
+    // RESPONSIVE
     @screen lg{
+        // COMPUTED
         @apply px-4;
     }
 
     a{
         .nf-alert-body {
-            @apply p-2 rounded-full items-center text-#{$theme-color-nf}-100 leading-none flex;
+            // DISPLAY
+            @apply items-center leading-none flex;
+            // COMPUTED
+            @apply p-2;
+            // DECORATION
+            @apply rounded-full;
 
+            // COLOR
+            @apply text-#{$theme-color-nf}-100;
+
+            // RESPONSIVE
             @screen lg{
-                @apply inline-flex bg-#{$theme-color-nf}-600;
+                // DISPLAY
+                @apply inline-flex;
+                // COLOR: LIGHT
+                @apply bg-#{$theme-color-nf}-600;
+                // COLOR: DARK
+                @media (prefers-color-scheme: dark) {
+                    @apply bg-#{$theme-color-dark-nf}-700;
+                }
             }
 
             .nf-alert-status {
-                @apply flex rounded-full uppercase px-2 py-1 text-xs font-bold mr-3;
+                // DISPLAY
+                @apply flex;
+                // COMPUTED
+                @apply px-2 py-1 mr-3;
+                // TEXT HELPER
+                @apply text-xs font-bold;
+                // DECORATION
+                @apply rounded-full uppercase;
             }
 
             .nf-alert-text {
-                @apply font-semibold mr-2 text-left flex-auto;
+                // DISPLAY
+                @apply flex-auto;
+                // COMPUTED
+                @apply mr-2;
+                // TEXT HELPER
+                @apply font-semibold text-left;
             }
         }
     }

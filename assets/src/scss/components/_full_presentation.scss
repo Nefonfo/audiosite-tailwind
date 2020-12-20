@@ -1,7 +1,15 @@
 .nf-full-presentation{
-    @apply bg-#{$theme-color-nf}-400;
+    // DISPLAY
     @apply flex flex-wrap;
     position: relative;
+
+    // COLOR: LIGHT
+    @apply bg-#{$theme-color-nf}-400;
+    // COLOR: DARK
+    @media (prefers-color-scheme: dark) {
+        @apply bg-#{$theme-color-dark-nf}-600;
+    }
+
     .nf-full-content {
         @apply flex flex-wrap;
         z-index: 2;
@@ -75,12 +83,24 @@
 }
 
 .nf-full-svg-waves{
+    // DISPLAY
     position: absolute;
     top: 0;
     z-index: 1;
+    // COLOR: LIGHT
     @apply bg-#{$theme-color-nf}-400;
 
+    // COLOR: DARK
+    @media (prefers-color-scheme: dark) {
+        @apply bg-#{$theme-color-dark-nf}-600;
+    }
+
     path {
-        fill: theme('colors.#{$theme-color-nf}.800')
+        // COLOR: LIGHT
+        fill: theme('colors.#{$theme-color-nf}.800');
+        // COLOR: DARK
+        @media (prefers-color-scheme: dark) {
+            fill: theme('colors.#{$theme-color-dark-nf}.900');;
+        }
     }
 }
