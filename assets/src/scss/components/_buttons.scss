@@ -1,13 +1,13 @@
 .nf-btn-primary{
     @include classic-button(bg-#{$theme-color-nf}-800, bg-#{$theme-color-nf}-600, text-white);
     @media (prefers-color-scheme: dark) {
-        @include classic-button(bg-#{$theme-color-dark-nf}-800, bg-#{$theme-color-dark-nf}-900, text-white);
+        @include classic-button(bg-#{$theme-color-dark-nf}-700, bg-#{$theme-color-dark-nf}-800, text-white);
     }
 }
 
 .nf-btn-light{
-    @include classic-button(bg-white, bg-#{$theme-color-nf}-400, text-#{$theme-color-nf}-400, text-white);
+    @include classic-button(bg-white, bg-#{$theme-color-nf}-400, text-#{$theme-color-nf}-600, text-white);
     @media (prefers-color-scheme: dark) {
-        @include classic-button(bg-white, bg-#{$theme-color-dark-nf}-500, text-#{$theme-color-dark-nf}-500, text-white);
+        @include classic-button(bg-white, bg-#{$theme-color-dark-nf}-500, text-#{$theme-color-dark-nf}-600, text-white);
     }
 }

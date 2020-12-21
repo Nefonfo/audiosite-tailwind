@@ -1,34 +1,57 @@
 .nf-small-cta {
+    // COLOR: LIGHT
     @apply bg-gray-100;
+    // COLOR: DARK
+    @media (prefers-color-scheme: dark) {
+        @apply bg-#{$theme-color-dark-nf}-800;
+    }
 }
 
 .nf-small-cta-container {
+    // COMPUTED
     max-width: 80rem;
     @apply mx-auto py-12 px-4;
 
+    // RESPONSIVE
     @screen sm {
+        // COMPUTED
         @apply px-6;
     }
-
     @screen lg {
-        @apply py-16 px-24 flex items-center justify-between;
+        // DISPLAY
+        @apply flex items-center justify-between;
+        // COMPUTED
+        @apply py-16 px-24;
     }
 
     h2 {
-        @apply text-3xl font-extrabold tracking-tight text-#{$theme-color-nf}-800 text-center;
+        // TEXT HELPERS
+        @apply text-3xl font-extrabold tracking-tight text-center;
+        // COLOR: LIGHT
+        @apply text-#{$theme-color-nf}-800;
+        // COLOR: DARK
+        @media (prefers-color-scheme: dark) {
+            @apply text-white;
+        }
 
+        // RESPONSIVE
         @screen sm {
             @apply text-4xl;
         }
-
         @screen lg {
             @apply text-left;
         }
 
         span {
+            // DISPLAY
             @apply block;
             &:not(:first-child){
+                // COLOR: LIGHT
                 @apply text-#{$theme-color-nf}-400;
+                // COLOR: DARK
+                @media (prefers-color-scheme: dark) {
+                    @apply text-#{$theme-color-dark-nf}-400;
+                }
             }
         }
     }

@@ -1,10 +1,18 @@
 @mixin classic-button($bg, $bg-hover, $text, $text-hover: null) {
+    // COMPUTED
+    @apply px-5 py-3;
+    // TEXT HELPERS
+    @apply text-base font-medium;
+    // DECORATIONS
+    @apply border border-transparent rounded-md;
+    // ANIMATION
     transition: all .15s ease-in;
-    @apply px-5 py-3 border border-transparent text-base font-medium rounded-md #{$text} #{$bg};
+    // COLOR
+    @apply #{$text} #{$bg};
 
     &:hover {
+        // COLOR
         @apply #{$bg-hover};
-
         @if($text-hover) {
                 @apply #{$text-hover};
         }

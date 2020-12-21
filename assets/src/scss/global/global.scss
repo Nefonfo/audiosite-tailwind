@@ -2,5 +2,15 @@ $theme-color-nf: 'purple';
 $theme-color-dark-nf: 'gray';
 
 body{
-    @apply flex flex-col min-h-screen;
+    // DISPLAY
+    @apply flex flex-col;
+    // SIZING
+    @apply min-h-screen;
+    // COLOR: LIGHT
+    @apply bg-white;
+    // COLOR: DARK
+    @media (prefers-color-scheme: dark) {
+        @apply bg-#{$theme-color-dark-nf}-600;
+    }
+    
 }

@@ -2,55 +2,110 @@
 //DESIGN FOR FOOTER
 
 .nf-footer{
-    @apply flex items-center justify-center flex-wrap p-3 bg-#{$theme-color-nf}-600 py-10 px-4;
-
+    // DISPLAY
+    @apply flex items-center justify-center flex-wrap;
+    // COMPUTED
+    @apply py-10 px-4;
+    // COLOR: LIGHT
+    @apply bg-#{$theme-color-nf}-600;
+    // COLOR : DARK
+    @media (prefers-color-scheme: dark) {
+        @apply bg-#{$theme-color-dark-nf}-900;
+    }
+    // RESPONSIVE
     @screen lg {
-        @apply px-24 py-20 justify-between items-start;
+        // DISPLAY
+        @apply justify-between items-start;
+        // COMPUTED
+        @apply px-24 py-20;
     }
 }
 
 .nf-footer-column {
-    @apply text-white w-full text-center mb-4;
+    // COMPUTED
+    @apply mb-4;
+    // SIZING
+    @apply w-full;
+    // TEXT HELPERS
+    @apply text-center;
+    // COLOR
+    @apply text-white;
 
+    // RESPONSIVE
     @screen md {
-        @apply w-1/2 text-center mb-10;
+        // COMPUTED
+        @apply mb-10;
+        // SIZING
+        @apply w-1/2;
+        // TEXT HELPERS
+        @apply text-center;
     }
-
     @screen lg {
-        @apply w-auto text-left mb-0;
+        // COMPUTED
+        @apply mb-0;
+        // SIZING
+        @apply w-auto;
+        // TEXT HELPERS
+        @apply text-left;
     }
 
     &.logo{
+        // COMPUTED
         @apply mb-8;
-        
+        // RESPONSIVE
         @screen lg {
+            // COMPUTED
             @apply mb-0;
         }
 
         a{
-            @apply flex flex-shrink-0 justify-center items-center flex-col text-white;
+            // DISPLAY
+            @apply flex flex-shrink-0 justify-center items-center flex-col;
+            // COLOR
+            @apply text-white;
+            // RESPONSIVE
             @screen lg {
+                // DISPLAY
                 @apply justify-start flex-row;
             }
             svg {
-                @apply fill-current h-10 w-10 mr-4;
+                // COMPUTED
+                @apply mr-4;
+                // SIZING
+                @apply h-10 w-10;
+                //COLOR
+                @apply fill-current;
             }
             span {
+                // TEXT HELPERS
                 @apply font-semibold text-2xl;
             }
         }
     }
 
     h3{
-        @apply font-semibold text-lg mb-6;
+        // COMPUTED
+        @apply mb-6;
+        // TEXT HELPERS
+        @apply font-semibold text-lg;
     }
 
     ul {
         li{
+            // COMPUTED
             @apply mb-3;
             a{
+                // COLOR: DARK
+                @media (prefers-color-scheme: dark) {
+                    @apply text-#{$theme-color-dark-nf}-200;
+                }
                 &:hover{
+                    // COLOR: LIGHT
                     @apply text-#{$theme-color-nf}-300;
+                    // COLOR: DARK
+                    @media (prefers-color-scheme: dark) {
+                        @apply text-#{$theme-color-dark-nf}-400;
+                    }
                 }
             }
         }
@@ -61,34 +116,81 @@
 
 // DESIGN FOR MINI FOOTER
 .nf-footer-mini{
-    @apply bg-gray-100 flex flex-wrap justify-center items-center py-2 px-2;
+    // DISPLAY
+    @apply flex flex-wrap justify-center items-center;
+    // COMPUTED
+    @apply py-2 px-2;
+    // COLOR: LIGHT
+    @apply bg-gray-100;
+    // COLOR: DARK
+    @media (prefers-color-scheme: dark) {
+        @apply bg-#{$theme-color-dark-nf}-700;
+    }
 
     @screen lg {
-        @apply px-24 justify-between;
+        // DISPLAY
+        @apply justify-between;
+        // COMPUTED
+        @apply px-24;
     }
 
     .nf-mini-text-copyright {
-        @apply w-full text-center mb-4 text-gray-600;
-
+        // COMPUTED
+        @apply mb-4;
+        // SIZING
+        @apply w-full;
+        // TEXT HELPERS
+        @apply text-center;
+        // COLOR: LIGHT
+        @apply text-gray-600;
+        // COLOR: DARK
+        @media (prefers-color-scheme: dark) {
+            @apply text-#{$theme-color-dark-nf}-300;
+        }
+        // RESPONSIVE
         @screen lg {
-            @apply mb-0 inline-flex flex-grow w-10/12;
+            // DISPLAY
+            @apply inline-flex flex-grow;
+            // COMPUTED
+            @apply mb-0;
+            // SIZING
+            @apply w-10/12;
         }
     }
 
     .nf-mini-social-links {
+        // DISPLAY
+        @apply flex justify-around;
+        // SIZING
+        @apply w-2/5;
+        // TEXT HELPERS
         font-size: 1.8rem;
-
-        @apply w-2/5 flex justify-around;
-        
+        // RESPONSIVE
         @screen lg {
+            // DISPLAY
+            @apply inline-flex flex-grow;
+            // SIZING
+            @apply w-2/12;
+            // TEXT HELPER
             font-size: 1.5rem;
-            @apply inline-flex flex-grow w-2/12;
         }
+
         .nf-mini-social-link {
-            @apply text-gray-600;
+            // ANIMATION
             transition: all .25s ease-in;
+            // COLOR: LIGHT
+            @apply text-gray-600;
+            // COLOR: DARK
+            @media (prefers-color-scheme: dark) {
+                @apply text-#{$theme-color-dark-nf}-100;
+            }
             &:hover {
+                // COLOR: LIGHT
                 @apply text-gray-800;
+                // COLOR: DARK
+                @media (prefers-color-scheme: dark) {
+                    @apply text-#{$theme-color-dark-nf}-400;
+                }
             }
         }
     }

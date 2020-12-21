@@ -1,50 +1,95 @@
 .nf-benefits-heading-container{
-    @apply flex flex-wrap justify-center px-10 pt-8;
+    // DISPLAY
+    @apply flex flex-wrap justify-center;
+    // COMPUTED
+    @apply px-10 pt-8;
 
     .nf-benefits-heading {
-        @include classic-title(text-#{$theme-color-nf}-800, text-#{$theme-color-nf}-600);
+        // MIXIN
+        @include classic-title(text-#{$theme-color-nf}-800, text-#{$theme-color-nf}-600, text-#{$theme-color-dark-nf}-100, text-#{$theme-color-dark-nf}-300);
     }
 }
 
 .nf-benefits-container {
-    @apply flex flex-wrap mb-6;
+    // DISPLAY
+    @apply flex flex-wrap;
+    // COMPUTED
+    @apply mb-6;
     .nf-benefit {
-        @apply flex flex-wrap px-10 my-6 items-center;
+        // DISPLAY
+        @apply flex flex-wrap items-center;
+        // COMPUTED
+        @apply px-10 my-6;
+
+        //RESPONSIVE
         @screen lg {
+            // COMPUTED
             @apply px-32;
         }
         .nf-benefit-info {
+            // SIZING
             @apply w-full;
 
+            // RESPONSIVE
             @screen lg {
+                // SIZING
                 @apply w-1/2;
             }
 
             h1 {
-                @apply text-3xl font-bold text-#{$theme-color-nf}-600 text-center mt-2;
+                // COMPUTED
+                @apply mt-2;
+                // TEXT HELPERS
+                @apply text-3xl font-bold text-center;
+                // COLOR: LIGHT
+                @apply text-#{$theme-color-nf}-600;
+                // COLOR: DARK
+                @media (prefers-color-scheme: dark) {
+                    @apply text-#{$theme-color-dark-nf}-100;
+                }
 
+                // RESPONSIVE
                 @screen lg {
                     @apply text-left mt-0;
                 }
             }
 
             p{
-                @apply text-lg text-gray-600 mt-2;
+                // COMPUTED
+                @apply mt-2;
+                // TEXT HELPERS
+                @apply text-lg;
+                // COLOR: LIGHT
+                @apply text-gray-600;
+                // COLOR: DARK
+                @media (prefers-color-scheme: dark) {
+                    @apply text-#{$theme-color-dark-nf}-200;
+                }
             }
         }
 
         .nf-benefit-image {
-            @apply w-full flex justify-center;
+            // DISPLAY
+            @apply flex justify-center;
+            // SIZING
+            @apply w-full;
 
+            // RESPONSIVE
             @screen lg {
+                // SIZING
                 @apply w-1/2;
             }
 
             img {
-                max-width: 18rem;
+                // COMPUTED
                 @apply mb-5;
+                // SIZING
+                @apply max-w-xs;
+
+                // RESPONSIVE
                 @screen lg {
-                    max-width: 25rem;
+                    // SIZING
+                    @apply max-w-md;
                 }
             }
         }

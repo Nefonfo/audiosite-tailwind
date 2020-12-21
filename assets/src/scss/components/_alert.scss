@@ -1,7 +1,7 @@
 .nf-alert{
 
     // COMPUTED
-    @apply py-0 py-2;
+    @apply py-2;
     // TEXT HELPER
     @apply text-center;
 
@@ -27,7 +27,8 @@
             @apply p-2;
             // DECORATION
             @apply rounded-full;
-
+            // TRANSITION
+            transition: background .15s ease-in;
             // COLOR
             @apply text-#{$theme-color-nf}-100;
 
@@ -40,6 +41,15 @@
                 // COLOR: DARK
                 @media (prefers-color-scheme: dark) {
                     @apply bg-#{$theme-color-dark-nf}-700;
+                }
+
+                &:hover {
+                    // COLOR: LIGHT
+                    @apply bg-#{$theme-color-nf}-400;
+                    // COLOR: DARK
+                    @media (prefers-color-scheme: dark) {
+                        @apply bg-#{$theme-color-dark-nf}-600;
+                    }
                 }
             }
 

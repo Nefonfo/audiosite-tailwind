@@ -1,60 +1,128 @@
 .nf-heading-container{
-    @apply flex flex-wrap justify-center px-10 pt-8 bg-gray-100;
+    // DISPLAY
+    @apply flex flex-wrap justify-center;
+    // COMPUTED
+    @apply px-10 pt-8;
+    // COLOR: LIGHT
+    @apply bg-gray-100;
+    // COLOR: DARK
+    @media (prefers-color-scheme: dark) {
+        @apply bg-#{$theme-color-dark-nf}-900;
+    }
 
     .nf-heading {
-        @include classic-title(text-#{$theme-color-nf}-800, text-#{$theme-color-nf}-600);
+        // MIXIN
+        @include classic-title(text-#{$theme-color-nf}-900, text-#{$theme-color-nf}-700, text-#{$theme-color-dark-nf}-100, text-#{$theme-color-dark-nf}-300);
     }
 }
 
 .nf-features-container {
-    @apply bg-gray-100;
+    // DISPLAY
     @apply flex flex-wrap justify-around items-stretch;
+    // COMPUTED
     @apply px-0 pt-6 pb-12;
+    // COLOR: LIGHT
+    @apply bg-gray-100;
+    // COLOR: DARK
+    @media (prefers-color-scheme: dark) {
+        @apply bg-#{$theme-color-dark-nf}-900;
+    }
 
+    // RESPONSIVE
     @screen md {
+        // COMPUTED
         @apply px-4;
     }
 
     @screen lg {
+        // COMPUTED
         @apply px-10;
     }
 
     .nf-features-card {
-        @apply flex flex-wrap px-4 py-4;
+        // DISPLAY
+        @apply flex flex-wrap;
+        // COMPUTED
+        @apply px-4 py-4;
+        // SIZING
         @apply w-full;
 
+        // RESPONSIVE
         @screen md{
+            // SIZING
             @apply w-1/2;
         }
-
         @screen lg{
+            // SIZING
             @apply w-1/3;
         }
 
         .nf-features-card-space{
-            @apply bg-white rounded-lg shadow-lg;
-            @apply w-auto flex flex-wrap flex-grow px-4 py-8;
+            // DISPLAY
+            @apply flex flex-wrap flex-grow;
+            // COMPUTED
+            @apply px-4 py-8;
+            // SIZING
+            @apply w-auto;
+            // DECORATION
+            @apply rounded-lg shadow-lg;
+            // COLOR: LIGHT
+            @apply bg-white;
+            // COLOR: DARK
+            @media (prefers-color-scheme: dark) {
+                @apply bg-#{$theme-color-dark-nf}-700;
+            }
+            // TRANSITION
             transition: all 0.35s ease-in;
+
             &:hover {
+                // DECORATION
                 @apply shadow-2xl;
             }
             
             .nf-features-card-icon{
-                @apply flex justify-center w-1/5 pt-2;
+                // DISPLAY
+                @apply flex justify-center;
+                // COMPUTED
+                @apply pt-2;
+                // SIZING
+                @apply w-1/5;
+
                 i{
+                    // COLOR: LIGHT
                     @apply text-#{$theme-color-nf}-800;
+                    // COLOR: DARK
+                    @media (prefers-color-scheme: dark) {
+                        @apply text-#{$theme-color-dark-nf}-500;
+                    }
                 }
             }
 
             .nf-features-card-body{
+                // SIZING
                 @apply w-4/5;
 
                 h1{
-                    @apply text-xl text-black font-bold;
+                    // TEXT HELPERS
+                    @apply text-xl font-bold;
+                    // COLOR: LIGHT
+                    @apply text-black;
+                    // COLOR: DARK
+                    @media (prefers-color-scheme: dark) {
+                        @apply text-white;
+                    }
                 }
 
                 p{
-                    @apply text-gray-600 mt-2;
+                    // COMPUTED
+                    @apply mt-2;
+                    // COLOR: LIGHT
+                    @apply text-gray-600;
+                    // COLOR: DARK
+                    @media (prefers-color-scheme: dark) {
+                        @apply text-#{$theme-color-dark-nf}-200;
+                    }
+                    
                 }
             }
         }

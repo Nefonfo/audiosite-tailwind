@@ -210,7 +210,7 @@
         
                 &.active {
                     // COLOR: LIGHT
-                    @apply bg-#{$theme-color-nf}-800;
+                    @apply bg-#{$theme-color-nf}-800 text-white;
                     // COLOR: DARK
                     @media (prefers-color-scheme: dark) {
                         @apply bg-#{$theme-color-dark-nf}-700;

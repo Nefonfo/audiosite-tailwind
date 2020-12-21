@@ -1,21 +1,44 @@
 .nf-toggle-up {
+    // DISPLAY
+    @apply flex items-center justify-center;
     position: fixed;
-    display: flex;
     right: 2rem;
     bottom: 2rem;
     z-index: 3;
+
+    // SIZING
+    @apply h-12 w-12;
+
+    // DECORATION
+    @apply shadow-2xl rounded-full;
     transform: scale(0);
-    transition: transform 0.25s ease-in;
+    transition: all 0.25s ease-in;
     cursor: pointer;
-    @apply shadow-2xl bg-#{$theme-color-nf}-500;
-    @apply rounded-full;
-    @apply h-12 w-12 flex items-center justify-center;
+
+    // COLOR: LIGHT
+    @apply bg-#{$theme-color-nf}-500;
+    // COLOR: DARK
+    @media (prefers-color-scheme: dark) {
+        @apply bg-#{$theme-color-dark-nf}-500;
+    }
+
+    &:hover {
+        // TRANSITION
+        // COLOR: LIGHT
+        @apply bg-#{$theme-color-nf}-700;
+        // COLOR: DARK
+        @media (prefers-color-scheme: dark) {
+            @apply bg-#{$theme-color-dark-nf}-600;
+        }
+    }
 
     &.nf-active {
+        // DISPLAY
         transform: scale(1);
     }
     
     span{
+        // COLOR
         @apply text-white;
     }
 }

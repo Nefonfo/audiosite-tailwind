@@ -1,64 +1,108 @@
 .nf-presentation-card {
+    // DISPLAY
     @apply flex flex-wrap;
+}
 
-    .nf-presentation-block{
-        @apply w-full;
-    
+.nf-presentation-block{
+    // SIZING
+    @apply w-full;
+    // RESPONSIVE
+    @screen lg {
+        // SIZING
+        @apply w-1/2;
+    }
+
+    &.nf-image-block {
+        // DISPLAY
+        position: relative;
+        // SIZING
+        min-height: 20rem;
+        // COMPUTED
+        @apply py-16 px-12;
+        // RESPONSIVE
         @screen lg {
-            @apply w-1/2;
-        }
-
-        &.nf-image-block {
-            position: relative;
-            min-height: 20rem;
-            @apply py-16 px-12;
-            @screen lg {
-                @apply py-32 px-24;
-            }
-            
-            &:before {
-                content: "";
-                position: absolute;
-                top: 0; 
-                left: 0;
-                width: 100%; 
-                height: 100%;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
+            // COMPUTED
+            @apply py-32 px-24;
         }
         
+        &:before {
+            // BACKGROUND CONTENT
+            content: "";
+            position: absolute;
+            top: 0; 
+            left: 0;
+            width: 100%; 
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
     
-        &.nf-info-block {
-            @apply bg-#{$theme-color-nf}-600 p-10 flex justify-center flex-col;
-            
-            @screen lg {
-                @apply p-20;
-            }
 
-            .nf-info-header {
-                @apply text-white text-4xl font-semibold;
+    &.nf-info-block {
+        // DISPLAY
+        @apply flex justify-center flex-col;
+        // COMPUTED
+        @apply p-10;
+        // COLOR: LIGHT
+        @apply bg-#{$theme-color-nf}-600;
+        // COLOR: DARK
+        @media (prefers-color-scheme: dark) {
+            @apply bg-#{$theme-color-dark-nf}-700;
+        }
+        // RESPONSIVE
+        @screen lg {
+            // COMPUTED
+            @apply p-20;
+        }
 
-                @screen md {
-                    @apply border-solid border-l-8 border-#{$theme-color-nf}-100;
+        .nf-info-header {
+            // TEXT HELPERS
+            @apply text-4xl font-semibold;
+            // COLOR
+            @apply text-white;
+            // RESPONSIVE
+            @screen md {
+                // DECORATION
+                @apply border-solid border-l-8;
+                // DECORATION COLOR: LIGHT
+                @apply border-#{$theme-color-nf}-100;
+                // DECORATION COLOR: DARK
+                @media (prefers-color-scheme: dark) {
+                    @apply border-#{$theme-color-dark-nf}-400;
+                }
 
-                    h1{
-                        @apply ml-2;
-                    }
+                h1{
+                    // COMPUTED
+                    @apply ml-2;
                 }
             }
+        }
 
-            .nf-info-specs {
-                ul {
-                    @apply mt-6;
+        .nf-info-specs {
+            ul {
+                // COMPUTED
+                @apply mt-6;
+                
+                // RESPONSIVE
+                @screen md {
+                    // COMPUTED
+                    @apply ml-4;
+                }
 
-                    @screen md {
-                        @apply ml-4;
-                    }
-                    li{
-                        @apply text-white text-2xl mt-2;
-                        i{
-                            @apply text-green-400;
+                li{
+                    // COMPUTED
+                    @apply mt-2;
+                    // TEXT HELPER
+                    @apply text-2xl;
+                    // COLOR
+                    @apply text-white;
+                    i{
+                        // COLOR: LIGHT
+                        @apply text-green-400;
+                        // COLOR: DARK
+                        @media (prefers-color-scheme: dark) {
+                            @apply text-green-600;
                         }
                     }
                 }

@@ -1,11 +1,30 @@
-@mixin classic-title($h1-color, $h3-color){
-    @apply  flex flex-wrap flex-col text-center w-full;
+@mixin classic-title($h1-color, $h3-color, $h1-dark-color, $h3-dark-color){
+    // DISPLAY
+    @apply flex flex-wrap flex-col;
+    // SIZING
+    @apply w-full;
+    // TEXT HELPER
+    @apply text-center;
 
     h1 {
-        @apply text-5xl font-bold #{$h1-color};
+        // TEXT HELPERS
+        @apply text-5xl font-bold;
+        // COLOR: LIGHT
+        @apply #{$h1-color};
+        // COLOR: DARK
+        @media (prefers-color-scheme: dark) {
+            @apply #{$h1-dark-color};
+        }
     }
 
     h3{
-        @apply text-4xl font-semibold #{$h3-color};
+        // TEXT HELPERS
+        @apply text-4xl font-semibold;
+        // COLOR: LIGHT
+        @apply #{$h3-color};
+        // COLOR: DARK
+        @media (prefers-color-scheme: dark) {
+            @apply #{$h3-dark-color};
+        }
     }
 }
