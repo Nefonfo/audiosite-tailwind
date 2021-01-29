@@ -1,0 +1,119 @@
+.nf-team-stack {
+    @apply py-10;
+    // COLOR: LIGHT
+    @apply bg-#{$theme-color-nf}-100;
+    // COLOR: DARK
+    @media (prefers-color-scheme: dark) {
+        @apply bg-#{$theme-color-dark-nf}-800;
+    }
+
+    .nf-team-title {
+        // COMPUTED
+        @apply px-4;
+        @screen md {
+            @apply px-32;
+        }
+        @screen lg {
+            @apply px-40;
+        }
+        // MIXIN FOR TITLE
+        @include elegant-presentation-title(text-#{$theme-color-nf}-800, text-#{$theme-color-nf}-600, text-#{$theme-color-dark-nf}-200, text-#{$theme-color-dark-nf}-400);
+    }
+}
+
+.nf-team-container{
+    // DISPLAY
+    @apply flex flex-wrap justify-center align-middle;
+    // COMPUTED
+    @apply px-4 mt-3;
+    
+
+    .nf-team-card{
+        // COMPUTED
+        @apply px-3 my-3;
+        position: relative;
+        @apply cursor-pointer;
+        // SIZING
+        @apply w-full;
+        // DECORATION
+        height: 30rem;
+        @screen md {
+            height: 20rem;
+        }
+        // MEDIAS
+        @screen md {
+            // SIZING
+            @apply w-5/12;
+        }
+
+        @screen lg {
+            // SIZING
+            @apply w-3/12;
+        }
+        img {
+            @apply w-full h-full;
+            @apply rounded-3xl;
+            @apply shadow-md;
+            object-fit: cover;
+            transition: all 0.25s ease-in;
+            filter: brightness(40%);
+
+            &:hover {
+                @apply shadow-2xl;
+            }
+        }
+
+        @screen md {
+            img {
+                transition: all 0.25s ease-in;
+                filter: brightness(100%);
+            }
+            &:hover {
+                img {
+                    transition: all 0.25s ease-in;
+                    filter: brightness(40%);
+                }
+    
+                .nf-team-card-content  {
+                    transition: all 0.25s ease-in;
+                    @apply opacity-100;
+                }
+            }
+        }
+
+        .nf-team-card-content {
+            position: absolute;
+            left: 50%;
+            top: 75%;
+            transform: translate(-50%, -50%);
+            transition: all 0.25s ease-in;
+            @apply text-center;
+            @screen md {
+                @apply opacity-0;
+            }
+
+            h1 {
+                @apply text-xl font-semibold text-white;
+            }
+
+            h4 {
+                @apply text-base text-white;
+            }
+
+            .nf-team-links {
+                @apply mt-3 flex justify-center align-middle;
+                a{
+                    i{
+                        @apply text-2xl text-white mx-2;
+                        transition: all 0.25s ease-in;
+                        &:hover {
+                            transition: all 0.25s ease-in;
+                            @apply text-gray-400;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

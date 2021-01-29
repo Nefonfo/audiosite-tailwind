@@ -28,3 +28,39 @@
         }
     }
 }
+
+@mixin elegant-presentation-title($h1-color, $p-color, $h1-dark-color, $p-dark-color){
+    // DISPLAY
+    @apply flex flex-wrap flex-col;
+    // SIZING
+    @apply w-full;
+    // TEXT HELPER
+    @apply text-center;
+
+    h1 {
+        // COMPUTED
+        @apply mb-2;
+        // TEXT HELPERS
+        @apply text-3xl font-bold;
+        // COLOR: LIGHT
+        @apply #{$h1-color};
+        // COLOR: DARK
+        @media (prefers-color-scheme: dark) {
+            @apply #{$h1-dark-color};
+        }
+    }
+
+    p{
+        // TEXT HELPERS
+        @apply text-base font-semibold;
+        @screen md {
+            @apply text-lg;
+        }
+        // COLOR: LIGHT
+        @apply #{$p-color};
+        // COLOR: DARK
+        @media (prefers-color-scheme: dark) {
+            @apply #{$p-dark-color};
+        }
+    }
+}
